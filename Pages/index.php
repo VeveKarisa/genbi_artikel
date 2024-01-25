@@ -1,10 +1,14 @@
 <?php
 include 'navbar.php';
-$result = mysqli_query($koneksi, "SELECT * FROM artikel");
+$result = mysqli_query($koneksi, "SELECT * FROM artikel ORDER BY tanggal_upload DESC LIMIT 7");
 ?>
 <div class="p-4 w-full flex flex-col gap-4">
     <h1 class="font-bold text-2xl">List Artikel</h1>
-    <button data-modal-target="add-modal" data-modal-toggle="add-modal" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1">Tambah Artikel</button>
+    <div class="flex gap-2">
+        <button data-modal-target="add-modal" data-modal-toggle="add-modal" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1">Tambah Artikel</button>
+        <a href="berita.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1">Tambah Berita</a>
+        <a href="divisi.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1">Tambah Divisi</a>
+    </div>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
@@ -38,10 +42,10 @@ $result = mysqli_query($koneksi, "SELECT * FROM artikel");
                         <td class="text-center">
                             <?= $index + 1 ?>
                         </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900">
                             <?= $row['judul'] ?>
                         </th>
-                        <td class="px-6 py-4">
+                        <td class="px-6 py-4 text-justify">
                             <p class=""><?= $row['description'] ?></p>
                         </td>
                         <td class="px-6 py-4">
@@ -106,7 +110,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM artikel");
                         </div>
                     </div>
                     <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                        Add new product
+                        Tambah Artikel
                     </button>
                 </form>
             </div>
