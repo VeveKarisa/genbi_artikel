@@ -14,8 +14,10 @@
 
     <?php include './templates/navbar.php'; ?>
     <?php
-    $result = mysqli_query($koneksi, "SELECT * FROM artikel");
+    $result = mysqli_query($koneksi, "SELECT * FROM artikel ORDER BY tanggal_upload DESC LIMIT 3");
+    $berita = mysqli_query($koneksi, "SELECT * FROM berita ORDER BY tanggal_upload DESC LIMIT 4");
     ?>
+
 
     <div class="relative">
         <!-- Carousel -->
@@ -34,26 +36,39 @@
         </div>
     </div>
 
-    <div class="grid grid-cols-2 w-full">
+    <div class="inline-flex items-center justify-center w-full transition-transform duration-300 transform hover:scale-110">
+        <hr class="w-64 h-1 my-8 bg-gray-500 border-0 rounded dark:bg-gray-700 ">
+        <div class="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">
+            <svg class="w-4 h-4 text-gray-700 dark:text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+                <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
+            </svg>
+        </div>
+    </div>
+
+
+    <div class="grid grid-cols-2 w-full gap-10">
 
         <div class="p-6 w-full">
-            <a href="#" class="text-3xl text-slate-600 hover:underline">Artikel Kami</a>
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-3xl text-slate-600 hover:underline">Artikel Kami</a>
+                <a href="artikel.php" class="text-2xl text-blue-500 hover:underline">Selengkapnya</a>
+            </div>
             <div class="w-full my-5 gap-10 ">
                 <?php foreach ($result as $index => $row) : ?>
                     <div class="my-5">
                         <div class="flex justify-between items-center mb-1">
-                            <h3 class="font-medium text-lg line-clamp-2"><?= $row['judul'] ?></h3>
+                            <a href="artikel_detail.php?id=<?= $row['artikel_id'] ?>" class="hover:text-blue-800 font-medium text-lg line-clamp-2"><?= $row['judul'] ?></a>
                             <div class="flex items-center gap-2">
                                 <h3 class="text-sm text-slate-400 line-clamp-2">Oleh <?= $row['penulis'] ?></h3>
-                                <h3 class="text-sm text-slate-400 line-clamp-2"><?= $row['tanggal_upload'] ?></h3>
+                                <h3 class="text-sm text-slate-400 line-clamp-2"><?= date('d/m/Y', strtotime($row['tanggal_upload'])) ?></h3>
                             </div>
                         </div>
                         <div class="rounded-md flex flex-col">
                             <div class="w-full">
-                                <img src="assets/img/<?= $row['img'] ?>" class="w-full h-60 object-cover rounded-md  transition-transform duration-300 transform hover:scale-95" alt="">
+                                <img src="assets/img/<?= $row['img'] ?>" class="w-full h-60 object-cover rounded-md transition-transform duration-300 transform hover:scale-95" alt="">
                                 <div class="description-container">
                                     <p id="descriptionText" class="text-sm line-clamp-3 text-justify"><?= $row['description'] ?></p>
-                                    <button id="readMoreBtn" class="text-blue-500 hover:underline cursor-pointer">Read More</button>
+                                    <a href="artikel_detail.php?id=<?= $row['artikel_id'] ?>" class="text-blue-500 hover:underline cursor-pointer">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -63,8 +78,29 @@
         </div>
 
         <div class="p-6 w-full">
-            tes
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-3xl text-slate-600 hover:underline">Update BI</a>
+                <a href="berita.php" class="text-2xl text-blue-500 hover:underline">Selengkapnya</a>
+            </div>
+            <div class="w-full my-5">
+                <?php foreach ($berita as $index => $row) : ?>
+                    <div class="grid grid-cols-2 my-5 gap-3">
+                        <div class="rounded-md w-full">
+                            <img src="assets/img/<?= $row['img'] ?>" class="w-full h-60 object-cover rounded-md transition-transform duration-300 transform hover:scale-95" alt="">
+                        </div>
+                        <div class="items-center mb-1">
+                            <a href="berita_detail.php?id=<?= $row['berita_id'] ?>" class="hover:text-blue-800 font-medium text-lg line-clamp-2"><?= $row['judul'] ?></a>
+                            <h3 class="text-sm text-slate-400 line-clamp-2"><?= date('d/m/Y', strtotime($row['tanggal_upload'])) ?></h3>
+                            <div class="description-container">
+                                <p id="descriptionText" class="text-sm line-clamp-3 text-justify"><?= $row['description'] ?></p>
+                                <a href="berita_detail.php?id=<?= $row['berita_id'] ?>" class="text-blue-500 hover:underline cursor-pointer">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach ?>
+            </div>
         </div>
+
     </div>
 
     <?php include './templates/footer.php'; ?>
@@ -84,7 +120,7 @@
         });
     </script>
 
-    <script>
+    <!-- <script>
         const descriptionText = document.getElementById('descriptionText');
         const readMoreBtn = document.getElementById('readMoreBtn');
 
@@ -101,7 +137,7 @@
                 readMoreBtn.innerText = 'Read More';
             }
         });
-    </script>
+    </script> -->
 
 </body>
 
