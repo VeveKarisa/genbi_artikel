@@ -40,7 +40,7 @@ require('../koneksi.php');
                                 </ul>
                             </div>
                         </li> -->
-                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Inti</a></li>
+                        <li><a href="../inti.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Inti</a></li>
                         <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Pendidikan</a></li>
                         <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Lingkungan Hidup</a></li>
                         <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Kesehatan Masyarakat</a></li>
