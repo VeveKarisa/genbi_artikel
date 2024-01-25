@@ -12,7 +12,8 @@ require('../koneksi.php');
     <div>
         <ul class="flex gap-6">
             <li><a href="../index.php" class="hover:text-slate-300">Beranda</a></li>
-            <li><a href="about.php" class="hover:text-slate-300">Artikel</a></li>
+            <li><a href="../artikel.php" class="hover:text-slate-300">Artikel</a></li>
+            <li><a href="../berita.php" class="hover:text-slate-300">Berita</a></li>
             <li class="group">
                 <button id="driveDropdownHoverButton" data-dropdown-toggle="driveDropdownHover" class="flex items-center text-base hover:text-slate-300" type="button">
                     Divisi
@@ -39,12 +40,12 @@ require('../koneksi.php');
                                 </ul>
                             </div>
                         </li> -->
-                        <li><a href="https://drive.google.com/drive/u/1/folders/0ByH0orhq3eD8N1RsRzhvTVNGakU" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Inti</a></li>
-                        <li><a href="https://drive.google.com/drive/folders/1EDtIIC6Fb1-B6OU450JlwmXD8hTaxuwn" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Pendidikan</a></li>
-                        <li><a href="https://drive.google.com/drive/u/1/folders/0ByN0aij8lCHHOGFtWXdUd3dpMnc" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Lingkungan Hidup</a></li>
-                        <li><a href="https://drive.google.com/drive/u/1/folders/0ByN0aij8lCHHQmdlWHpuekpVcGs" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Kesehatan Masyarakat</a></li>
-                        <li><a href="https://drive.google.com/drive/folders/1A0vX_zc7ISHkLr_kPbqtYxOzREOyoyus" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Kewirausahaan</a></li>
-                        <li><a href="https://drive.google.com/drive/u/1/folders/0ByN0aij8lCHHQzVvR19ua2Jvem8" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Komunikasi & Informasi</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Inti</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Pendidikan</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Lingkungan Hidup</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Kesehatan Masyarakat</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Kewirausahaan</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" target="_blank">Komunikasi & Informasi</a></li>
                     </ul>
                 </div>
             </li>

@@ -12,9 +12,7 @@
         <!-- Your existing content goes here -->
     </main>
 
-
-
-    <footer class="bg-white dark:bg-gray-900 w-full">
+    <footer class="bg-white dark:bg-gray-900">
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
             <div class="grid grid-cols-3">
@@ -124,7 +122,6 @@
     html,
     body {
         height: 100%;
-        bottom: 0;
         margin: 0;
         padding: 0;
     }
@@ -134,7 +131,11 @@
         flex-direction: column;
     }
 
-    main {
+    .wrapper {
         flex: 1;
+    }
+
+    footer {
+        margin-top: auto;
     }
 </style>
