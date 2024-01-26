@@ -10,8 +10,6 @@ $anggota_satu = $_POST['anggota_satu'];
 $anggota_dua = $_POST['anggota_dua'];
 $anggota_tiga = $_POST['anggota_tiga'];
 $anggota_empat = $_POST['anggota_empat'];
-$anggota_lima = $_POST['anggota_lima'];
-$anggota_enam = $_POST['anggota_enam'];
 $image = $_FILES['image']['name'];;
 
 // echo "<pre>";
