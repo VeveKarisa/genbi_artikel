@@ -1,7 +1,7 @@
 <?php
 include './templates/navbar.php';
 require('koneksi.php');
-$result = mysqli_query($koneksi, "SELECT * FROM inti");
+$result = mysqli_query($koneksi, "SELECT * FROM pendi");
 ?>
 
 <!-- <div style="width: 100%; max-width: 100%;">
@@ -22,21 +22,26 @@ $result = mysqli_query($koneksi, "SELECT * FROM inti");
                 <img src="assets/img/<?= $row['img'] ?>" alt="<?= $row['img'] ?>" class="w-full">
                 <p class="mt-2  font-bold text-justify">Berikut adalah struktur keanggotaan Divisi <?= $row['nama_divisi'] ?>:</p>
                 <div class="my-3">
-                    <p class="font-bold">Ketua Umum:</p>
-                    <li class="text-justify"><?= $row['ketua'] ?></li>
+                    <p class="font-bold">Koordinator:</p>
+                    <li class="text-justify"><?= $row['koor'] ?></li>
                 </div>
                 <div class="mb-3">
-                    <p class="font-bold">Wakil:</p>
-                    <li class="text-justify"><?= $row['wakil'] ?></li>
+                    <p class="font-bold">Sekretaris Divisi:</p>
+                    <li class="text-justify"><?= $row['sekre'] ?></li>
                 </div>
                 <div class="mb-3">
-                    <p class="font-bold">Sekretaris</p>
-                    <li class="text-justify"><?= $row['sekre_satu'] ?> (1)</li>
-                    <li class="text-justify"><?= $row['sekre_dua'] ?> (2)</li>
+                    <p class="font-bold">Sekretaris Divisi:</p>
+                    <li class="text-justify"><?= $row['benda'] ?></li>
                 </div>
-                <p class="font-bold">Bendahara</p>
-                <li class="text-justify"><?= $row['benda_satu'] ?> (1)</li>
-                <li class="text-justify"><?= $row['benda_dua'] ?> (2)</li>
+                <div>
+                    <p class="font-bold">Anggota:</p>
+                    <li class="text-justify"><?= $row['anggota_satu'] ?></li>
+                    <li class="text-justify"><?= $row['anggota_dua'] ?></li>
+                    <li class="text-justify"><?= $row['anggota_tiga'] ?></li>
+                    <li class="text-justify"><?= $row['anggota_empat'] ?></li>
+                    <li class="text-justify"><?= $row['anggota_lima'] ?></li>
+                    <li class="text-justify"><?= $row['anggota_enam'] ?></li>
+                </div>
             </div>
             <div class="items-center w-1/3">
                 <div class="text-justify mb-3">
