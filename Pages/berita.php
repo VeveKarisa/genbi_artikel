@@ -184,15 +184,15 @@ $result = mysqli_query($koneksi, "SELECT * FROM berita ORDER BY tanggal_upload D
                         <svg class="mx-auto mb-4 text-red-600 w-12 h-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                         </svg>
-                        <h3 class="mb-5 text-lg font-normal text-gray-500">Are you sure you want to delete this <span class="text-red-600"><?= $row['judul'] ?></span> Berita?</h3>
+                        <h3 class="mb-5 text-lg font-normal text-gray-500">Apa kamu yakin ingin menghapus berita <span class="text-red-600"><?= $row['judul'] ?></span> ini?</h3>
                         <div class="flex justify-center">
                             <form action="../crud_berita/delete_berita.php" method="POST" class="w-fit">
                                 <input type="text" name="berita_id" id="berita_id" class="hidden" value="<?= $row['berita_id'] ?>">
                                 <button data-modal-hide="delete-modal-<?= $row['berita_id'] ?>" type="submit" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center me-2">
-                                    Yes, I'm sure
+                                    Hapus
                                 </button>
                             </form>
-                            <button data-modal-hide="delete-modal-<?= $row['berita_id'] ?>" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">No, cancel</button>
+                            <button data-modal-hide="delete-modal-<?= $row['berita_id'] ?>" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">Batal</button>
                         </div>
                     </div>
                 </div>
