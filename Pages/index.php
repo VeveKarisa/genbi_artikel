@@ -1,13 +1,20 @@
 <?php
 include 'navbar.php';
 $result = mysqli_query($koneksi, "SELECT * FROM artikel ORDER BY tanggal_upload DESC LIMIT 7");
+
+// Pengecekan apakah pengguna sudah login
+if (!isset($_SESSION['user_id'])) {
+    // Jika belum login, alihkan ke halaman login
+    header("Location: ../auth/login.php");
+    exit();
+}
 ?>
 <div class="p-4 w-full flex flex-col gap-4">
     <h1 class="font-bold text-2xl">List Artikel</h1>
     <div class="flex gap-2">
-        <button data-modal-target="add-modal" data-modal-toggle="add-modal" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1">Tambah Artikel</button>
-        <a href="berita.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1">Tambah Berita</a>
-        <a href="divisi.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1">Tambah Divisi</a>
+        <button data-modal-target="add-modal" data-modal-toggle="add-modal" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1 text-sm lg:text-base md:text-base">Tambah Artikel</button>
+        <a href="berita.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1 text-sm lg:text-base md:text-base">Tambah Berita</a>
+        <a href="divisi.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1 text-sm lg:text-base md:text-base">Tambah Divisi</a>
     </div>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500">

@@ -30,5 +30,5 @@ if (mysqli_num_rows($query) > 0) {
 	// Mengatur level user berdasarkan data id level
 	header('Location: ../Pages/');
 } else {
-	echo "<script>alert('Username atau Password Anda salah. Silakan coba lagi!'); window.location='index.php?err=salah';</script>";
+	echo "<script>alert('Username atau Password Anda salah. Silakan coba lagi!'); window.location='login.php?err=salah';</script>";
 }

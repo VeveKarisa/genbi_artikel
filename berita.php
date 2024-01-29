@@ -12,10 +12,10 @@ $result = mysqli_query($koneksi, "SELECT * FROM berita");
 
 </div>
 
-<div class="lg:p-6 w-full">
+<div class="lg:p-6 px-7">
     <?php foreach ($result as $index => $row) : ?>
         <div class="p-6 mb-5 w-full bg-white shadow-2xl">
-            <div class="flex items-center gap-3">
+            <div class="lg:flex md:flex items-center gap-3 lg:w-full md:w-full mx-auto lg:mx-0 md:mx-0">
                 <img src="assets/img/<?= $row['img'] ?>" class="w-96 object-cover rounded-md transition-transform duration-300 transform hover:scale-95" alt="">
                 <div class="">
                     <div class="mb-3">

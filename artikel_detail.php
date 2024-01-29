@@ -32,14 +32,15 @@ if ($artikel_id && is_numeric($artikel_id)) {
                 </div>
             </div>
             <hr>
-            <div class="p-4 flex gap-10 ">
+            <div class="p-4 lg:flex md:flex gap-10 ">
                 <div class="items-center">
-                    <h2 class="text-3xl font-medium mb-3"><?= $artikel['judul'] ?></h2>
+                    <h2 class="lg:text-3xl md:text-3xl text-xl font-medium mb-3"><?= $artikel['judul'] ?></h2>
                     <img src="assets/img/<?= $artikel['img'] ?>" alt="<?= $artikel['judul'] ?>" class="w-full">
                     <p class="text-justify"><?= $artikel['description'] ?></p>
                 </div>
+                <hr class="lg:hidden md:hidden my-6">
                 <div class="items-center w-2/3">
-                    <h2 class="text-3xl font-medium mb-3">Sosmed Kami</h2>
+                    <h2 class="lg:text-3xl md:text-3xl text-xl font-medium mb-3">Sosmed Kami</h2>
 
                     <!-- Instagram -->
                     <div class="text-slate-600 uppercase">Instagram Kami</div>

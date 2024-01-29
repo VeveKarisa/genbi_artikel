@@ -14,10 +14,10 @@ $result = mysqli_query($koneksi, "SELECT * FROM pendi");
     </div>
 </div>
 <hr>
-<div class="lg:p-6 w-full">
+<div class="lg:p-6">
     <?php foreach ($result as $index => $row) : ?>
-        <div class="p-4 flex gap-10 ">
-            <div class="items-center w-3/4">
+        <div class="p-4 lg:flex md:flex gap-10 ">
+            <div class="items-center lg:w-3/4 md:w-3/4">
                 <h2 class="text-3xl font-medium mb-3"><?= $row['nama_divisi'] ?></h2>
                 <img src="assets/img/<?= $row['img'] ?>" alt="<?= $row['img'] ?>" class="w-full">
                 <p class="mt-2  font-bold text-justify">Berikut adalah struktur keanggotaan Divisi <?= $row['nama_divisi'] ?>:</p>
@@ -43,7 +43,8 @@ $result = mysqli_query($koneksi, "SELECT * FROM pendi");
                     <li class="text-justify"><?= $row['anggota_enam'] ?></li>
                 </div>
             </div>
-            <div class="items-center w-1/3">
+            <hr class="lg:hidden my-5">
+            <div class="items-center lg:w-1/3 md:w-1/3">
                 <div class="text-justify mb-3">
                     <h2 class="text-3xl font-medium mb-3">Visi</h2>
                     <p>Menjadikan kaum muda indonesia sebagai generasi yang kompeten dalam berbagai bidang keilmuan serta dapat membawa perubahan positif dan menjadi inspirasi bagi bangsa dan negara</p>
@@ -51,9 +52,9 @@ $result = mysqli_query($koneksi, "SELECT * FROM pendi");
                 <hr>
 
                 <h2 class="mt-3 text-3xl font-medium mb-3">Misi</h2>
-                <li class="mb-3">Menggagas berbagai kegiatan pemberdayaan masyarakat untuk indonesia yang lebih baik <span class="font-bold">(INITIATE)</span></li>
-                <li class="mb-3">Menjadi garda terdepan dalam melakukan aksi nyata untuk pembangunan bangsa <span class="font-bold">(ACT)</span></li>
-                <li class="mb-3">Berbagi inspirasi dan motivasi untuk menjadi enegeri bagi negeri <span class="font-bold">(INSPIRASI)</span></li>
+                <li class="mb-3 text-justify">Menggagas berbagai kegiatan pemberdayaan masyarakat untuk indonesia yang lebih baik <span class="font-bold">(INITIATE)</span></li>
+                <li class="mb-3 text-justify">Menjadi garda terdepan dalam melakukan aksi nyata untuk pembangunan bangsa <span class="font-bold">(ACT)</span></li>
+                <li class="mb-3 text-justify">Berbagi inspirasi dan motivasi untuk menjadi enegeri bagi negeri <span class="font-bold">(INSPIRASI)</span></li>
                 <hr>
 
                 <h2 class="mt-3 text-3xl font-medium mb-3">Temukan Kami</h2>

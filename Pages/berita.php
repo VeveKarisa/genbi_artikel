@@ -6,9 +6,9 @@ $result = mysqli_query($koneksi, "SELECT * FROM berita ORDER BY tanggal_upload D
 <div class="p-4 w-full flex flex-col gap-4">
     <h1 class="font-bold text-2xl">List Berita</h1>
     <div class="flex gap-2">
-        <button data-modal-target="add-modal" data-modal-toggle="add-modal" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1">Tambah Berita</button>
-        <a href="index.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1">Tambah Artikel</a>
-        <a href="divisi.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1">Tambah Divisi</a>
+        <button data-modal-target="add-modal" data-modal-toggle="add-modal" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1 text-sm lg:text-base md:text-base">Tambah Berita</button>
+        <a href="index.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1 text-sm lg:text-base md:text-base">Tambah Artikel</a>
+        <a href="divisi.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1 text-sm lg:text-base md:text-base">Tambah Divisi</a>
     </div>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500">

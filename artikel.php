@@ -9,11 +9,11 @@ $result = mysqli_query($koneksi, "SELECT * FROM artikel");
     <p class="">Selamat datang di Artikel Web GenBI Komisariat Politeknik Negeri Batam.</p>
 </div>
 
-<div class="lg:p-6 w-full">
+<div class="lg:p-6 px-7">
     <?php foreach ($result as $index => $row) : ?>
         <div class="p-6 mb-5 w-full bg-white shadow-2xl">
-            <div class="flex items-center gap-3">
-                <img src="assets/img/<?= $row['img'] ?>" class="w-96 object-cover rounded-md transition-transform duration-300 transform hover:scale-95" alt="">
+            <div class="lg:flex md:flex items-center gap-3 lg:w-full md:w-full mx-auto lg:mx-0 md:mx-0">
+                <img src="assets/img/<?= $row['img'] ?>" class="lg:w-96 lg:px-0 object-cover rounded-md transition-transform duration-300 transform hover:scale-95" alt="">
                 <div class="">
                     <div class="mb-3">
                         <a href="artikel_detail.php?id=<?= $row['artikel_id'] ?>" class="hover:text-blue-800 font-medium text-lg line-clamp-2"><?= $row['judul'] ?></a>

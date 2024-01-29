@@ -7,7 +7,7 @@ $berita_id = isset($_GET['id']) ? $_GET['id'] : null;
 
 // Pastikan berita_id tidak kosong dan hanya berisi angka
 if ($berita_id && is_numeric($berita_id)) {
-    // Query untuk mengambil detail artikel berdasarkan berita_id
+    // Query untuk mengambil detail berita berdasarkan berita_id
     $query = "SELECT * FROM berita WHERE berita_id = $berita_id";
     $result = mysqli_query($koneksi, $query);
 
@@ -19,6 +19,7 @@ if ($berita_id && is_numeric($berita_id)) {
         // Tampilkan detail berita
         if ($berita) {
 ?>
+
             <div style="width: 100%; max-width: 100%;">
                 <img src="assets/img/header_artikel.png" alt="header" style="width: 100%; max-width: 100%;" />
             </div>
@@ -31,15 +32,15 @@ if ($berita_id && is_numeric($berita_id)) {
                 </div>
             </div>
             <hr>
-
-            <div class="p-4 flex gap-10 ">
-                <div class="items-center w-3/4">
-                    <h2 class="text-3xl font-medium mb-3"><?= $berita['judul'] ?></h2>
+            <div class="p-4 lg:flex md:flex gap-10 ">
+                <div class="items-center lg:w-2/3 md:w-2/3 w-full">
+                    <h2 class="lg:text-3xl md:text-3xl text-xl font-medium mb-3"><?= $berita['judul'] ?></h2>
                     <img src="assets/img/<?= $berita['img'] ?>" alt="<?= $berita['judul'] ?>" class="w-full">
                     <p class="text-justify"><?= $berita['description'] ?></p>
                 </div>
+                <hr class="lg:hidden md:hidden my-6">
                 <div class="items-center">
-                    <h2 class="text-3xl font-medium mb-3">Sosmed Kami</h2>
+                    <h2 class="lg:text-3xl md:text-3xl text-xl font-medium mb-3">Sosmed Kami</h2>
 
                     <!-- Instagram -->
                     <div class="text-slate-600 uppercase">Instagram Kami</div>
@@ -113,13 +114,13 @@ if ($berita_id && is_numeric($berita_id)) {
 
 <?php
         } else {
-            echo "Artikel tidak ditemukan.";
+            echo "berita tidak ditemukan.";
         }
     } else {
         echo "Error: " . mysqli_error($koneksi);
     }
 } else {
-    echo "Parameter artikel_id tidak valid.";
+    echo "Parameter berita_id tidak valid.";
 }
 
 include './templates/footer.php';

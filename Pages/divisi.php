@@ -6,24 +6,32 @@ $lh = mysqli_query($koneksi, "SELECT * FROM lh");
 $kesmas = mysqli_query($koneksi, "SELECT * FROM kesmas");
 $kwu = mysqli_query($koneksi, "SELECT * FROM kwu");
 $kominfo = mysqli_query($koneksi, "SELECT * FROM kominfo");
+
+// Pengecekan apakah pengguna sudah login
+if (!isset($_SESSION['user_id'])) {
+    // Jika belum login, alihkan ke halaman login
+    header("Location: ../auth/login.php");
+    exit();
+}
+
 ?>
 
 <div class="p-4 w-full flex flex-col gap-4">
     <h1 class="font-bold text-2xl">Divisi GenBI Komisariat Polibatam</h1>
     <div class="flex gap-2">
-        <a href="divisi.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1">Tambah Divisi</a>
-        <a href="index.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1">Tambah Artikel</a>
-        <a href="berita.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1">Tambah Berita</a>
+        <a href="divisi.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1 text-sm lg:text-base md:text-base">Tambah Divisi</a>
+        <a href="index.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1 text-sm lg:text-base md:text-base">Tambah Artikel</a>
+        <a href="berita.php" class="bg-gray-700 hover:bg-gray-600 rounded-lg text-white w-fit px-2 py-1 text-sm lg:text-base md:text-base">Tambah Berita</a>
     </div>
 
     <!-- ADD DIVISI -->
-    <div class="flex items-center gap-4">
-        <button data-modal-target="add-modal" data-modal-toggle="add-modal" class="bg-red-600 hover:bg-red-500 rounded-lg text-white w-fit px-2 py-1">Tambah Inti</button>
-        <button data-modal-target="add-pendi" data-modal-toggle="add-pendi" class="bg-blue-900 hover:bg-blue-800 rounded-lg text-white w-fit px-2 py-1">Tambah Pendidikan</button>
-        <button data-modal-target="add-lh" data-modal-toggle="add-lh" class="bg-blue-500 hover:bg-blue-400 rounded-lg text-white w-fit px-2 py-1">Tambah LH</button>
-        <button data-modal-target="add-kesmas" data-modal-toggle="add-kesmas" class="bg-green-500 hover:bg-green-400 rounded-lg text-white w-fit px-2 py-1">Tambah Kesmas</button>
-        <button data-modal-target="add-kwu" data-modal-toggle="add-kwu" class="bg-pink-400 hover:bg-pink-300 rounded-lg text-white w-fit px-2 py-1">Tambah KWU</button>
-        <button data-modal-target="add-kominfo" data-modal-toggle="add-kominfo" class="bg-yellow-400 hover:bg-yellow-300 rounded-lg text-white w-fit px-2 py-1">Tambah Kominfo</button>
+    <div class="lg:flex md:flex items-center gap-4">
+        <button data-modal-target="add-modal" data-modal-toggle="add-modal" class="bg-red-600 hover:bg-red-500 rounded-lg text-white w-fit px-2 py-1 text-sm lg:text-base md:text-base mb-3 lg:mb-0 md:mb-0">Tambah Inti</button>
+        <button data-modal-target="add-pendi" data-modal-toggle="add-pendi" class="bg-blue-900 hover:bg-blue-800 rounded-lg text-white w-fit px-2 py-1 text-sm lg:text-base md:text-base mb-3 lg:mb-0 md:mb-0">Tambah Pendidikan</button>
+        <button data-modal-target="add-lh" data-modal-toggle="add-lh" class="bg-blue-500 hover:bg-blue-400 rounded-lg text-white w-fit px-2 py-1 text-sm lg:text-base md:text-base mb-3 lg:mb-0 md:mb-0">Tambah LH</button>
+        <button data-modal-target="add-kesmas" data-modal-toggle="add-kesmas" class="bg-green-500 hover:bg-green-400 rounded-lg text-white w-fit px-2 py-1 text-sm lg:text-base md:text-base mb-3 lg:mb-0 md:mb-0">Tambah Kesmas</button>
+        <button data-modal-target="add-kwu" data-modal-toggle="add-kwu" class="bg-pink-400 hover:bg-pink-300 rounded-lg text-white w-fit px-2 py-1 text-sm lg:text-base md:text-base mb-3 lg:mb-0 md:mb-0">Tambah KWU</button>
+        <button data-modal-target="add-kominfo" data-modal-toggle="add-kominfo" class="bg-yellow-400 hover:bg-yellow-300 rounded-lg text-white w-fit px-2 py-1 text-sm lg:text-base md:text-base mb-3 lg:mb-0 md:mb-0">Tambah Kominfo</button>
     </div>
 
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-10">

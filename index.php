@@ -46,7 +46,7 @@
     </div>
 
 
-    <div class="grid grid-cols-2 w-full gap-10">
+    <div class="lg:grid lg:grid-cols-2 md:grid md:grid-cols-2 w-full lg:gap-10 md:gap-10">
 
         <div class="p-6 w-full">
             <div class="flex items-center justify-between">
@@ -86,7 +86,7 @@
                 <?php foreach ($berita as $index => $row) : ?>
                     <div class="grid grid-cols-2 my-5 gap-3">
                         <div class="rounded-md w-full">
-                            <img src="assets/img/<?= $row['img'] ?>" class="w-full h-60 object-cover rounded-md transition-transform duration-300 transform hover:scale-95" alt="">
+                            <img src="assets/img/<?= $row['img'] ?>" class="w-full lg:h-60 md:h-60 h-40 object-cover rounded-md transition-transform duration-300 transform hover:scale-95" alt="">
                         </div>
                         <div class="items-center mb-1">
                             <a href="berita_detail.php?id=<?= $row['berita_id'] ?>" class="hover:text-blue-800 font-medium text-lg line-clamp-2"><?= $row['judul'] ?></a>
