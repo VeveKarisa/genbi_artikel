@@ -19,7 +19,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM berita");
                 <img src="assets/img/<?= $row['img'] ?>" class="w-96 object-cover rounded-md transition-transform duration-300 transform hover:scale-95" alt="">
                 <div class="">
                     <div class="mb-3">
-                        <a href="artikel_detail.php?id=<?= $row['berita_id'] ?>" class="hover:text-blue-800 font-medium text-lg line-clamp-2"><?= $row['judul'] ?></a>
+                        <a href="berita_detail.php?id=<?= $row['berita_id'] ?>" class="hover:text-blue-800 font-medium text-lg line-clamp-2"><?= $row['judul'] ?></a>
                         <div class="flex items-center gap-2">
                             <h3 class="text-sm text-slate-400 line-clamp-2">Oleh <?= $row['penulis'] ?></h3>
                             <h3 class="text-sm text-slate-400 line-clamp-2"><?= date('d/m/Y', strtotime($row['tanggal_upload'])) ?></h3>
